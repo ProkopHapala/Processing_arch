@@ -1,0 +1,4 @@
+Prague		100 0 
+Moscow         -100 0  
+Berlin            0 0
+Buda-Pest         0 0

@@ -1,0 +1,5 @@
+#! /usr/bin/gnuplot -persist
+plot "out.txt" u 1:2 with lines
+set term "png"
+set output "out.png"
+replot

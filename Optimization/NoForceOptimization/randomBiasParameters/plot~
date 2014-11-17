@@ -1,0 +1,2 @@
+#! /usr/bin/gnuplot -persist
+plot "out.txt" u 1:2 with lines

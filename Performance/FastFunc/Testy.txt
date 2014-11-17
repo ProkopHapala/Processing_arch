@@ -1,0 +1,87 @@
+----- Original exp() ----- 
+
+  for (int i = 0; i<m;i++){ 
+  test+=exp(1.0/i);
+  }
+
+10000000 ops
+547 ms
+5.47E-5 ms/ops
+18281.535 ops/ms
+
+
+----- fast exp() prokop ---------
+  for (int i = 0; i<m;i++){
+  test+=exp1(1.0/i);
+  }
+
+10000000 ops
+406 ms
+4.06E-5 ms/ops
+24630.541 ops/ms
+
+----- fasp exp() fexp -----------
+  for (int i = 0; i<m;i++){
+  test+=fexp(1.0/i);
+  }
+
+10000000 ops
+250 ms
+2.5E-5 ms/ops
+40000.0 ops/ms
+------ small exp() fexp -----------
+  for (int i = 0; i<m;i++){
+  test+=smallexp(1.0/i);
+  }
+
+10000000 ops
+234 ms
+2.34E-5 ms/ops
+42735.043 ops/ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------- SQRT() ---------
+  for (int i = 0; i<m;i++){
+  test+= sqrt(i);
+  }
+100000000 ops
+2094 ms
+2.094E-5 ms/ops
+47755.492 ops/ms
+
+
+------ORIGINAL  sin()------------
+
+test+=sin(i%100);
+
+10 000 000 ops
+969 ms
+9.69E-5 ms/ops
+10319.917 ops/ms
+
+-------- fsin() ----------
+
+test+=fsin(i);
+10 000 000 ops
+375 ms
+3.75E-5 ms/ops
+26666.666 ops/ms
+
+-------- sintab --------
+
+10 000 000 ops
+344 ms
+3.44E-5 ms/ops
+29069.768 ops/ms

@@ -1,0 +1,4 @@
+ia,ib,material,area,r0,restitution
+ 0, 2, steel,  1.0e-6, -1.0, 0.5 
+ 1, 2, steel,  1.0e-6, -1.0, 0.5
+

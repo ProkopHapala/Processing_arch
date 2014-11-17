@@ -1,0 +1,6 @@
+#! /bin/sh 
+
+/usr/bin/gnuplot -persist << EOF 
+plot "$1" u 1:2 w linespoints notitle
+EOF 
+

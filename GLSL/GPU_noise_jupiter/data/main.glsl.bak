@@ -1,0 +1,45 @@
+
+
+// ========================== FRACTALIZE FUNCTIONS
+
+const float sc1 = 2.0;      const float amp1 = 0.6;
+const float sc2 = sc1*sc1; const float amp2 = amp1*amp1;
+const float sc3 = sc2*sc1; const float amp3 = amp2*amp1;
+const float sc4 = sc3*sc1; const float amp4 = amp3*amp1;
+const float sc5 = sc4*sc1; const float amp5 = amp4*amp1;
+const float sc6 = sc5*sc1; const float amp6 = amp5*amp1;
+
+float multiNoise(vec2 t){
+	return 
+	0.5   * noise_func( t)   +
+	0.25  * noise_func( t*2) +
+	0.125 * noise_func( t*4) +
+	0.125 * noise_func( t*8)
+	;
+}
+
+const int      n = 5;
+const float resc = (1.0/(1<<n));
+
+vec2 multiWarp(vec2 t){
+	t += noise_map( t   );
+	t += noise_map( t*sc1 )*amp1;
+	t += noise_map( t*sc2 )*amp2;
+	t += noise_map( t*sc3 )*amp3;
+	t += noise_map( t*sc4 )*amp4;
+	t += noise_map( t*sc5 )*amp5;
+	return t;
+}
+
+// ========================== MAIN
+
+void main(void){
+	vec2 q  = (gl_FragCoord.xy / resolution); 
+	q  += mouse*0.01;
+	//float f = noise_bilinear( q*40);
+	//float f = multiNoise( q*40);
+	vec2 v  = multiWarp( (q - vec2(0.5,0.5))*10 );
+	//float f = multiNoise( v );
+	float f = noise_func( v );
+    gl_FragColor = vec4( f,f,f, 1.0 );
+}
