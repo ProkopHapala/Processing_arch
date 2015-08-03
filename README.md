@@ -1,4 +1,4 @@
-# Processing_arch
+# Prokop's archive of Processing sketches
 
 This is a set of my ( Prokop's Hapala's ) sketeches in [Processing](https://processing.org/) 
 
